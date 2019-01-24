@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="FeatureFlags.51722f5e-ebad-4691-8b19-d63cbc98e3e4" Version="1.0.4" Language="en-US" Publisher="Paul Harrington" />
+        <DisplayName>Feature Flags</DisplayName>
+        <Description xml:space="preserve">Control Visual Studio feature flags through Tools/Options.</Description>
+        <License>LICENSE</License>
+        <ReleaseNotes>ReleaseNotes.txt</ReleaseNotes>
+        <Tags>Feature Flags</Tags>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Version="[15.0,17.0)" Id="Microsoft.VisualStudio.Community" />
+    </Installation>
+    <Dependencies>
+    </Dependencies>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    </Assets>
+</PackageManifest>
