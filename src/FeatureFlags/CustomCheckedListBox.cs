@@ -19,12 +19,16 @@ namespace FeatureFlags
         {
             if (!DesignMode)
             {
-                var flagName = Items[e.Index].ToString();
-                if (GetItemChecked(e.Index) != DataModel.IsFeatureEnabledByDefault(flagName))
+                var index = e.Index;
+                if (index >= 0 && index < Items.Count)
                 {
-                    // Changing the Font in the DrawItemEventArgs doesn't work -
-                    // the underlying control always using the control's font.
-                    _drawingFont = new Font(e.Font, FontStyle.Bold);
+                    var flagName = Items[index].ToString();
+                    if (GetItemChecked(index) != DataModel.IsFeatureEnabledByDefault(flagName))
+                    {
+                        // Changing the Font in the DrawItemEventArgs doesn't work -
+                        // the underlying control always using the control's font.
+                        _drawingFont = new Font(e.Font, FontStyle.Bold);
+                    }
                 }
             }
 
