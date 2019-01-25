@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
+using System.Threading;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
+using Task = System.Threading.Tasks.Task;
 
 namespace FeatureFlags
 {
@@ -25,11 +27,11 @@ namespace FeatureFlags
     /// To get loaded into VS, the package must be referred by &lt;Asset Type="Microsoft.VisualStudio.VsPackage" ...&gt; in .vsixmanifest file.
     /// </para>
     /// </remarks>
-    [PackageRegistration(UseManagedResourcesOnly = true)]
+    [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [Guid(PackageGuidString)]
     [ProvideOptionPage(typeof(FeatureFlagsOptionPage), "Environment", "FeatureFlags", 113, 114, false, 115)]
     [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
-    public sealed class FeatureFlagsPackage : Package
+    public sealed class FeatureFlagsPackage : AsyncPackage
     {
         /// <summary>
         /// FeatureFlagsPackage GUID string.
@@ -47,18 +49,25 @@ namespace FeatureFlags
             // initialization is the Initialize method.
         }
 
-        #region Package Members
+        #region AsyncPackage Members
 
         /// <summary>
         /// Initialization of the package; this method is called right after the package is sited, so this is the place
         /// where you can put all the initialization code that rely on services provided by VisualStudio.
         /// </summary>
-        protected override void Initialize()
+        /// <param name="cancellationToken">A cancellation token to monitor for initialization cancellation, which can occur when VS is shutting down.</param>
+        /// <param name="progress">A provider for progress updates.</param>
+        /// <returns>A task representing the async work of package initialization, or an already completed task if there is none. Do not return null from this method.</returns>
+        protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
-            base.Initialize();
+            // When initialized asynchronously, the current thread may be a background thread at this point.
+            // Do any initialization that requires the UI thread after switching to the UI thread.
+            await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
 
             Telemetry.Client.TrackEvent(nameof(FeatureFlagsPackage) + "." + nameof(Initialize), new Dictionary<string, string> { ["VSVersion"] = GetShellVersion() });
         }
+
+        #endregion
 
 #pragma warning disable VSTHRD010 // Invoke single-threaded types on Main thread
         private string GetShellVersion()
@@ -80,7 +89,5 @@ namespace FeatureFlags
             base.Dispose(disposing);
             Telemetry.Client.Flush();
         }
-
-        #endregion
     }
 }
