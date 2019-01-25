@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿// Copyright (c) Paul Harrington.  All Rights Reserved.  Licensed under the MIT License.  See LICENSE in the project root for license information.
+
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace FeatureFlags

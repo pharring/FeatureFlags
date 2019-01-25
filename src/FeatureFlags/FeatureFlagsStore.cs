@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualStudio.FeatureFlags;
+﻿// Copyright (c) Paul Harrington.  All Rights Reserved.  Licensed under the MIT License.  See LICENSE in the project root for license information.
+
+using Microsoft.VisualStudio.FeatureFlags;
 using Microsoft.VisualStudio.Settings;
 using System;
 using System.Collections.Generic;
