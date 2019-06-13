@@ -57,6 +57,7 @@
     <Compile Include="CustomCheckedListBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FeatureFlag.cs" />
     <Compile Include="FeatureFlagsDataModel.cs" />
     <Compile Include="FeatureFlagsOptionPage.cs">
       <SubType>Component</SubType>
