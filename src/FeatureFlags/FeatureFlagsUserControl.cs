@@ -15,7 +15,6 @@ namespace FeatureFlags
         {
             _dataModel = dataModel;
             InitializeComponent();
-            allFeatureFlagsListBox.DataModel = _dataModel;
             warningIcon.Image = SystemIcons.Warning.ToBitmap();
         }
 
@@ -24,7 +23,7 @@ namespace FeatureFlags
             allFeatureFlagsListBox.Items.Clear();
             foreach (var featureFlag in _dataModel.GetFlags())
             {
-                allFeatureFlagsListBox.Items.Add(featureFlag.Name, featureFlag.IsEnabled);
+                allFeatureFlagsListBox.Items.Add(featureFlag, featureFlag.IsEnabled);
             }
         }
 
@@ -52,6 +51,14 @@ namespace FeatureFlags
             }
 
             Telemetry.Client.TrackEvent("ResetAllButtonClicked");
+        }
+
+        private void AllFeatureFlagsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (allFeatureFlagsListBox.SelectedItem is FeatureFlag featureFlag)
+            {
+                descriptionLabel.Text = featureFlag.Description ?? "No description provided.";
+            }
         }
     }
 }

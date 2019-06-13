@@ -7,8 +7,6 @@ namespace FeatureFlags
 {
     internal class CustomCheckedListBox : CheckedListBox
     {
-        public FeatureFlagsDataModel DataModel { get; set; }
-
         private Font _drawingFont;
 
         public override Font Font
@@ -24,8 +22,8 @@ namespace FeatureFlags
                 var index = e.Index;
                 if (index >= 0 && index < Items.Count)
                 {
-                    var flagName = Items[index].ToString();
-                    if (GetItemChecked(index) != DataModel.IsFeatureEnabledByDefault(flagName))
+                    var featureFlag = (FeatureFlag)Items[index];
+                    if (GetItemChecked(index) != featureFlag.IsEnabledByDefault)
                     {
                         // Changing the Font in the DrawItemEventArgs doesn't work -
                         // the underlying control always using the control's font.

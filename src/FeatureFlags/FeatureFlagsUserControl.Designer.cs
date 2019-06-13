@@ -33,6 +33,7 @@
             this.resetAllButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.allFeatureFlagsListBox = new FeatureFlags.CustomCheckedListBox();
+            this.descriptionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.warningIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,17 +83,28 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.allFeatureFlagsListBox.CheckOnClick = true;
-            this.allFeatureFlagsListBox.DataModel = null;
             this.allFeatureFlagsListBox.FormattingEnabled = true;
             this.allFeatureFlagsListBox.Location = new System.Drawing.Point(0, 68);
             this.allFeatureFlagsListBox.Name = "allFeatureFlagsListBox";
-            this.allFeatureFlagsListBox.Size = new System.Drawing.Size(399, 199);
+            this.allFeatureFlagsListBox.Size = new System.Drawing.Size(399, 154);
             this.allFeatureFlagsListBox.TabIndex = 2;
+            this.allFeatureFlagsListBox.SelectedIndexChanged += new System.EventHandler(this.AllFeatureFlagsListBox_SelectedIndexChanged);
+            // 
+            // descriptionLabel
+            // 
+            this.descriptionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel.Location = new System.Drawing.Point(0, 225);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(396, 41);
+            this.descriptionLabel.TabIndex = 6;
             // 
             // FeatureFlagsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.resetAllButton);
             this.Controls.Add(this.warningIcon);
@@ -111,5 +123,6 @@
         private System.Windows.Forms.PictureBox warningIcon;
         private System.Windows.Forms.Button resetAllButton;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label descriptionLabel;
     }
 }
