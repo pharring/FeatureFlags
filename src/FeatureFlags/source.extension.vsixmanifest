@@ -2,7 +2,7 @@
 <!-- Copyright (c) Paul Harrington.  All Rights Reserved.  Licensed under the MIT License.  See LICENSE in the project root for license information. -->
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="FeatureFlags.51722f5e-ebad-4691-8b19-d63cbc98e3e4" Version="1.0.5" Language="en-US" Publisher="Paul Harrington" />
+    <Identity Id="FeatureFlags.51722f5e-ebad-4691-8b19-d63cbc98e3e4" Version="1.0.6" Language="en-US" Publisher="Paul Harrington" />
     <DisplayName>Feature Flags</DisplayName>
     <Description xml:space="preserve">Control Visual Studio feature flags through Tools/Options.</Description>
     <License>LICENSE</License>
