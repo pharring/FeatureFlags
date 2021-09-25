@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json.schemastore.org/vsix-publish",
+  "categories": [ "other" ],
+  "identity": {
+    "internalName": "FeatureFlagsExtension"
+  },
+  "overview": "overview.md",
+  "priceCategory": "free",
+  "publisher": "PaulHarrington",
+  "private": false,
+  "qna": true,
+  "repo": "https://github.com/pharring/FeatureFlags",
+  "assetFiles": [
+    {
+      "pathOnDisk": "images/FeatureFlagsToolsOptions.png",
+      "targetPath": "images/FeatureFlagsToolsOptions.png"
+    }
+  ]
+}

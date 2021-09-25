@@ -7,6 +7,17 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FeatureFlags", "FeatureFlag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSIX", "VSIX\VSIX.csproj", "{3F420576-39A8-4635-A64D-9FD52EF50C7D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Marketplace", "Marketplace", "{8E577576-47DA-45D5-9092-278C068CD50C}"
+	ProjectSection(SolutionItems) = preProject
+		..\marketplace\overview.md = ..\marketplace\overview.md
+		..\marketplace\publishManifest.json = ..\marketplace\publishManifest.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{8B946ABC-4396-487E-B1A0-DD5D6CE8C9B1}"
+	ProjectSection(SolutionItems) = preProject
+		..\marketplace\images\FeatureFlagsToolsOptions.png = ..\marketplace\images\FeatureFlagsToolsOptions.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		FeatureFlags\FeatureFlags.projitems*{3f420576-39a8-4635-a64d-9fd52ef50c7d}*SharedItemsImports = 4
@@ -24,6 +35,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8B946ABC-4396-487E-B1A0-DD5D6CE8C9B1} = {8E577576-47DA-45D5-9092-278C068CD50C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8261DFD0-BF3C-4883-B8D6-E2EC13972221}
