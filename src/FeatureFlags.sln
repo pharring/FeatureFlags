@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31717.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FeatureFlags", "FeatureFlags\FeatureFlags.shproj", "{4403576E-4140-40A4-8AE1-247FDCE0B095}"
 EndProject
@@ -18,10 +18,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{8B946A
 		..\marketplace\images\FeatureFlagsToolsOptions.png = ..\marketplace\images\FeatureFlagsToolsOptions.png
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSIX_Dev17", "VSIX_Dev17\VSIX_Dev17.csproj", "{A2DA4CA1-B647-4AAC-8760-D399AB59DF56}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		FeatureFlags\FeatureFlags.projitems*{3f420576-39a8-4635-a64d-9fd52ef50c7d}*SharedItemsImports = 4
 		FeatureFlags\FeatureFlags.projitems*{4403576e-4140-40a4-8ae1-247fdce0b095}*SharedItemsImports = 13
+		FeatureFlags\FeatureFlags.projitems*{a2da4ca1-b647-4aac-8760-d399ab59df56}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +35,10 @@ Global
 		{3F420576-39A8-4635-A64D-9FD52EF50C7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F420576-39A8-4635-A64D-9FD52EF50C7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F420576-39A8-4635-A64D-9FD52EF50C7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2DA4CA1-B647-4AAC-8760-D399AB59DF56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2DA4CA1-B647-4AAC-8760-D399AB59DF56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2DA4CA1-B647-4AAC-8760-D399AB59DF56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2DA4CA1-B647-4AAC-8760-D399AB59DF56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
