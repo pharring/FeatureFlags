@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>4403576e-4140-40a4-8ae1-247fdce0b095</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>FFShared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)CustomCheckedListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)FeatureFlag.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FeatureFlagsDataModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FeatureFlagsOptionPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)FeatureFlagsPackage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FeatureFlagsStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FeatureFlagsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)FeatureFlagsUserControl.Designer.cs">
+      <DependentUpon>FeatureFlagsUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Properties\AssemblyInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SettingsStoreExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Telemetry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WritableFeatureFlagsStore.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)VSPackage.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

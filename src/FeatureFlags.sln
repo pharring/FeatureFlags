@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27110.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlags", "FeatureFlags\FeatureFlags.csproj", "{3F420576-39A8-4635-A64D-9FD52EF50C7D}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FeatureFlags", "FeatureFlags\FeatureFlags.shproj", "{4403576E-4140-40A4-8AE1-247FDCE0B095}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSIX", "VSIX\VSIX.csproj", "{3F420576-39A8-4635-A64D-9FD52EF50C7D}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		FeatureFlags\FeatureFlags.projitems*{3f420576-39a8-4635-a64d-9fd52ef50c7d}*SharedItemsImports = 4
+		FeatureFlags\FeatureFlags.projitems*{4403576e-4140-40a4-8ae1-247fdce0b095}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -20,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {717D3D4D-DE00-40EB-8AA7-1273D5E84020}
+		SolutionGuid = {8261DFD0-BF3C-4883-B8D6-E2EC13972221}
 	EndGlobalSection
 EndGlobal
