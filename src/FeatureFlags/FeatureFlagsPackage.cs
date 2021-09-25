@@ -32,7 +32,6 @@ namespace FeatureFlags
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [Guid(PackageGuidString)]
     [ProvideOptionPage(typeof(FeatureFlagsOptionPage), "Environment", "FeatureFlags", 113, 114, false, 115)]
-    [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
     public sealed class FeatureFlagsPackage : AsyncPackage
     {
         /// <summary>

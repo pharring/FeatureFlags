@@ -14,7 +14,7 @@ namespace FeatureFlags
             {
                 if (!store.PropertyExists(collectionPath, propertyName))
                 {
-                    value = default(bool);
+                    value = default;
                     return false;
                 }
 
@@ -23,7 +23,7 @@ namespace FeatureFlags
             }
             catch (Exception ex) when (!ErrorHandler.IsCriticalException(ex))
             {
-                value = default(bool);
+                value = default;
                 return false;
             }
         }

@@ -8,7 +8,7 @@ namespace FeatureFlags
 {
     internal sealed class WritableFeatureFlagsStore : FeatureFlagsStore
     {
-        private WritableSettingsStore _settingsStore;
+        private readonly WritableSettingsStore _settingsStore;
 
         public WritableFeatureFlagsStore(WritableSettingsStore settingsStore) : base(settingsStore) => this._settingsStore = settingsStore;
 
