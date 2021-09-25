@@ -6,7 +6,7 @@ A Visual Studio extension for viewing and controlling feature flags
 [![Visual Studio Marketplace Downloads](http://vsmarketplacebadge.apphb.com/downloads-short/PaulHarrington.FeatureFlagsExtension.svg)](https://marketplace.visualstudio.com/items?itemName=PaulHarrington.FeatureFlagsExtension)
 
 ## Getting Started
-Download and install the extension from the Visual Studio Marketplace.
+Download and install the extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=PaulHarrington.FeatureFlagsExtension).
 
 _Note: This extension collects and transmits anonymized usage statistics to the extension author for product improvement purposes._
 
