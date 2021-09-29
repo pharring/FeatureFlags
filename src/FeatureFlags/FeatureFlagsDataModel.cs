@@ -17,6 +17,7 @@ namespace FeatureFlags
         // The value names represent the property names to use in the collection of the flags store
         private const string c_flagValueName = "Value";
         private const string c_flagDescription = "Description";
+        private const string c_packageGuid = "PackageGuid";
 
         private static readonly Regex s_featureNameRegex = new Regex(c_featureNameRegExPattern);
 
@@ -88,7 +89,21 @@ namespace FeatureFlags
                     var isEnabled = _customizationsStore.GetBoolValue(collectionPath, c_flagValueName) ?? isEnabledByDefault;
                     var description = _defaultsStore.GetString(collectionPath, c_flagDescription);
 
-                    flags.Add(new FeatureFlag(flagName, isEnabled, isEnabledByDefault, description));
+                    // If the description looks like a package string resource ID (e.g. #1001), then
+                    // grab the package GUID too.
+                    //.Note: We don't eagerly load the package strings here, though. We do that
+                    // lazily in the user control for the selected item only.
+                    Guid? packageGuid = null;
+                    if (description?.Length > 1 && (description[0] == '#' || description[0] == '@'))
+                    {
+                        string packageGuidString = _defaultsStore.GetString(collectionPath, c_packageGuid);
+                        if (!string.IsNullOrEmpty(packageGuidString) && Guid.TryParse(packageGuidString, out Guid guid))
+                        {
+                            packageGuid = guid;
+                        }
+                    }
+
+                    flags.Add(new FeatureFlag(flagName, isEnabled, isEnabledByDefault, description, packageGuid));
                 }
             }
 

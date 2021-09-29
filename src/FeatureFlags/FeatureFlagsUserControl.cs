@@ -1,5 +1,8 @@
 ﻿// Copyright (c) Paul Harrington.  All Rights Reserved.  Licensed under the MIT License.  See LICENSE in the project root for license information.
 
+using Microsoft.VisualStudio;
+using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -55,10 +58,21 @@ namespace FeatureFlags
 
         private void AllFeatureFlagsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ThreadHelper.ThrowIfNotOnUIThread();
             if (allFeatureFlagsListBox.SelectedItem is FeatureFlag featureFlag)
             {
-                descriptionLabel.Text = featureFlag.Description ?? "No description provided.";
+                descriptionLabel.Text = GetDescription(featureFlag) ?? "No description provided.";
             }
+        }
+
+        private string GetDescription(FeatureFlag featureFlag)
+        {
+            ThreadHelper.ThrowIfNotOnUIThread();
+            return featureFlag.TryParseDescriptionResourceId(out uint resourceId, out Guid packageGuid)
+                && GetService(typeof(SVsShell)) is IVsShell shell
+                && ErrorHandler.Succeeded(shell.LoadPackageString(ref packageGuid, resourceId, out string description))
+                ? description
+                : featureFlag.Description;
         }
     }
 }
