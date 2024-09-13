@@ -38,15 +38,15 @@ jobs:
       env:
         Configuration: ${{ matrix.configuration }}
 
-    # Upload the VSIX package: https://github.com/marketplace/actions/upload-artifact
+    # Upload the VSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload build artifact (VSIX)
-      uses: actions/upload-artifact@3.0
+      uses: actions/upload-artifact@v4
       with:
         name: VSIX Package
         path: src/VSIX/bin/**/*.vsix
 
     - name: Upload build artifact (VSIX)
-      uses: actions/upload-artifact@3.0
+      uses: actions/upload-artifact@v4
       with:
         name: VSIX Package (Dev 17)
         path: src/VSIX_Dev17/bin/**/*.vsix
