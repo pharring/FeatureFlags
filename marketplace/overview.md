@@ -1,6 +1,6 @@
 This extension allows you to view and modify Feature Flags for Visual Studio. Feature Flags control the behavior of experimental or undocumented features.
 
-Looking for a version that works with **Visual Studio 2022 Preview**? Please [go here](https://marketplace.visualstudio.com/items?itemName=PaulHarrington.FeatureFlagsPreview) to download the preview version.
+Looking for a version that works with **Visual Studio 2022**? Please [go here](https://marketplace.visualstudio.com/items?itemName=PaulHarrington.FeatureFlagsPreview) to download it.
 
 ## Getting Started
 _Note: This extension collects and transmits anonymized usage statistics to the extension author for product improvement purposes._
