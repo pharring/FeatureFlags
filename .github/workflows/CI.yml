@@ -40,13 +40,13 @@ jobs:
 
     # Upload the VSIX package: https://github.com/marketplace/actions/upload-artifact
     - name: Upload build artifact (VSIX)
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@3.0
       with:
         name: VSIX Package
         path: src/VSIX/bin/**/*.vsix
 
     - name: Upload build artifact (VSIX)
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@3.0
       with:
         name: VSIX Package (Dev 17)
         path: src/VSIX_Dev17/bin/**/*.vsix
