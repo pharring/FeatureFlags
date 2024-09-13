@@ -1,6 +1,8 @@
 # FeatureFlags
 A Visual Studio extension for viewing and controlling feature flags
 
+[![Build Status](https://github.com/pharring/FeatureFlags/actions/workflows/CI.yml/badge.svg)](https://github.com/pharring/FeatureFlags/actions/workflows/CI.yml)
+
 ## Getting Started
 Download and install the extension from the Visual Studio Marketplace:
 
