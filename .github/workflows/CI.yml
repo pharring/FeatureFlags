@@ -22,9 +22,9 @@ jobs:
       with:
         fetch-depth: 0
 
-    # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
-    - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@v1.0.2
+    # Add  MSBuild to the PATH: https://github.com/marketplace/actions/setup-msbuild
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v2
 
     # Restore and build
     - name: Restore and build
